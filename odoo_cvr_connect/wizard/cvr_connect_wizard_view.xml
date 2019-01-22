@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<odoo>
+        <record id="cvr_wizard_view" model="ir.ui.view">
+            <field name="name">cvr.connect.wizrd.view</field>
+            <field name="model">cvr.connect</field>
+            <field name="arch" type="xml">
+                <form>
+                    <b><p class="oe_black" name = 'change'>
+                        This wizard will return CVR, Address of the Comapny and create partner record into Odoo. You will have to supply your company name in this wizard.
+                    </p></b>
+                    <group col="2">
+                            <field name="company_name" />
+                    </group>
+                    <footer>
+                        <button string="Connect to CVR" type="object" class="btn btn-sm btn-primary" name="cvrapi"/>
+                        <button string="Cancel" type="object" class="btn btn-sm btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+ 
+        <record id="cvr_wizard_view_action" model="ir.actions.act_window">
+            <field name="name">CVR Connection</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cvr.connect</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="cvr_wizard_view"/>
+            <field name="target">new</field>
+        </record>
+</odoo>

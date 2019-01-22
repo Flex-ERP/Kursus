@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_partner_form_inherit_view" model="ir.ui.view">
+            <field name="name">View Partner Form Inherit View</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml"> 
+                <xpath expr="//sheet/div[@class='oe_title']/h1" position="inside">
+                    <button string="Connect to CVR"  
+                                    class="btn btn-sm btn-primary" 
+                                    name = "%(odoo_cvr_connect.cvr_wizard_view_action)d" 
+                                    type = 'action'
+                                    context="{'default_company_name': name}"/>
+                </xpath>
+            </field>
+        </record>
+</odoo>

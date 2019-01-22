@@ -1,0 +1,12 @@
+<odoo>
+  <data>
+<!-- Reporting menus -->
+        <menuitem
+        	name="Connection CVR"
+        	id="cvr_connection_menu"
+        	parent="sale.sale_order_menu"
+        	action="odoo_cvr_connect.cvr_wizard_view_action"
+            groups="sales_team.group_sale_manager"
+        />
+  </data>
+</odoo>
